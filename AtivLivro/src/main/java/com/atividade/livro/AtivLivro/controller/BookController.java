@@ -30,7 +30,7 @@ public class BookController {
 
     @GetMapping("/{genre}")
     public ResponseEntity<List<BookModel>> getBookByGenre (@PathVariable(value = "genre") String genre){
-        return ResponseEntity.status(HttpStatus.OK).body(bookRepository.findByGenre());
+        return ResponseEntity.status(HttpStatus.OK).body(bookRepository.findByGenre(genre));
     }
 
     @PostMapping
